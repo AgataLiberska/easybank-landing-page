@@ -124,10 +124,34 @@ a, a:visited, a:hover {
 }
 
 .container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+.container--pall {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
+}
+.container--py {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+.container--px {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.container--pt {
+  padding-top: 2.25rem;
+}
+.container--pb {
+  padding-bottom: 2.25rem;
+}
+.container--pl {
+  padding-right: 1.5rem;
+}
+.container--pr {
+  padding-left: 1.5rem;
 }
 
 button, .button {
@@ -253,8 +277,20 @@ button:hover, .button:hover {
   text-align: center;
 }
 
+.hero {
+  background-color: #fafafa;
+}
+@media (min-width: 64em) {
+  .hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 .hero__image {
-  border: 1px solid magenta;
   position: relative;
   background-image: url("/easybank-landing-page/images/bg-intro-mobile.svg");
   background-size: cover;
@@ -262,7 +298,37 @@ button:hover, .button:hover {
   background-position: center center;
   min-height: 17.5rem;
 }
-.hero__image::before {
+@media (min-width: 40em) {
+  .hero__image {
+    min-height: 25rem;
+    background-position: center 60%;
+  }
+}
+@media (min-width: 64em) {
+  .hero__image {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    height: 41rem;
+    background-image: none;
+  }
+}
+@media (min-width: 64em) {
+  .hero__image::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    background-image: url("/easybank-landing-page/images/bg-intro-desktop.svg");
+    background-size: 122%;
+    background-position: 0% 83%;
+    background-repeat: no-repeat;
+  }
+}
+.hero__image::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -272,8 +338,34 @@ button:hover, .button:hover {
   background-repeat: no-repeat;
   background-position: center bottom;
 }
+@media (min-width: 40em) {
+  .hero__image::after {
+    background-size: 52%;
+  }
+}
+@media (min-width: 64em) {
+  .hero__image::after {
+    width: 120%;
+    height: 122%;
+    background-size: 94%;
+    background-repeat: no-repeat;
+    background-position: center 150%;
+    left: 22%;
+  }
+}
 .hero__text {
   text-align: center;
+}
+@media (min-width: 64em) {
+  .hero__text {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    text-align: left;
+  }
 }
 .hero__text h1 {
   font-weight: 400;
@@ -281,6 +373,11 @@ button:hover, .button:hover {
   line-height: 1.15;
   color: #2d314d;
   margin-bottom: 1.5rem;
+}
+@media (min-width: 64em) {
+  .hero__text h1 {
+    font-size: 3.25rem;
+  }
 }
 .hero__text p {
   line-height: 1.5;
